@@ -11,9 +11,9 @@ typedef struct {
     int age;
     char address[100];
     char occupation[100];
-    int covidVaccine; // Number of doses for Covid Vaccine
-    int hepatitisBVaccine; // Number of doses for Hepatitis B Vaccine
-    int bCGVaccine; // Number of doses for BCG Vaccine
+    int covidVaccine;
+    int hepatitisBVaccine;
+    int bCGVaccine;
 } User;
 
 void saveDataToFile(User users[], int numUsers) {
@@ -67,12 +67,12 @@ int main() {
                     printf("Enter age: ");
                     scanf("%d", &newUser.age);
                     printf("Enter address: ");
-                    getchar(); // Consume the newline character left by previous scanf
+                    getchar();
                     fgets(newUser.address, sizeof(newUser.address), stdin);
-                    newUser.address[strcspn(newUser.address, "\n")] = '\0'; // Remove trailing newline
+                    newUser.address[strcspn(newUser.address, "\n")] = '\0';
                     printf("Enter occupation: ");
                     fgets(newUser.occupation, sizeof(newUser.occupation), stdin);
-                    newUser.occupation[strcspn(newUser.occupation, "\n")] = '\0'; // Remove trailing newline
+                    newUser.occupation[strcspn(newUser.occupation, "\n")] = '\0';
                     printf("Enter number of doses of Covid Vaccine taken by %s: ", newUser.name);
                     scanf("%d", &newUser.covidVaccine);
                     printf("Enter number of doses of Hepatitis B Vaccine taken by %s: ", newUser.name);
